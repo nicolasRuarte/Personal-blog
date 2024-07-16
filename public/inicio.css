@@ -1,0 +1,14 @@
+#btn-create-article {
+  display: inline-block;
+  background-color: blue;
+  height: 10px;
+  width: 100px;
+}
+
+button {
+  background-color: red;
+}
+
+body {
+  background-color: grey;
+}
