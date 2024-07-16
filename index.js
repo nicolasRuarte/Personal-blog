@@ -5,14 +5,12 @@ const app = express();
 const PORT = 3000;
 
 app.set('view engine', 'ejs');
-app.set(express.static('./public'));
-
-app.listen(PORT);
+app.use(express.static('public'));
 
 app.get("/", (req, res) => {
-  res.render("index", {bienvenida: "¡Bienvenido usuario!"})
+  res.render("index");
 })
 
 app.use('/article', article);
 
-console.log(express.static);
+app.listen(PORT);
