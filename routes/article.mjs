@@ -4,7 +4,7 @@ const router = express();
 
 //Métodos para cada ruta de los artículos
 router
-  .route("/:id")
+  .route("/id=:id")
   .get((req, res) => {
     res.send(`Estás viendo el artículo con ID ${id}`);
   })
@@ -12,13 +12,13 @@ router
 router
   .route("/")
   .get((req, res) => {
-    res.send("");
+    res.send("article");
 })
 
 router
-  .route("/new")
+  .route("/create")
   .get((req, res) => {
-    res.send("Formulario para publicar artículo")
+    res.render("crear-articulo");
 })
 
 export default router
