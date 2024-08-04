@@ -1,5 +1,6 @@
 import express from 'express';
 import article from './routes/article.mjs'
+import { getArticles, getArticle, postArticle } from './database.js';
 
 const app = express();
 const PORT = 3000;
@@ -12,5 +13,12 @@ app.get("/", (req, res) => {
 })
 
 app.use('/article', article);
+
+app.get("/article/:id", async (req, res) => {
+  let id = req.params.id;
+  const article = await getArticle(id);
+
+  res.send(article);
+})
 
 app.listen(PORT);
