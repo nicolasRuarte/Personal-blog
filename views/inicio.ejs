@@ -5,16 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/inicio.css">
 </head>
 <body>
-    <h1>Hola</h1>
+    <div class="container">
+      <h1>Bienvenido al blog</h1>
+      <input type="text" id="buscador">
+      <button id="btn-buscar">Buscar</button>
+      <div id="btn-publish"><a>Publicar</a></div>
+    </div>
 
-    <input type="text" id="buscador">
-    <button id="btn-buscar">Buscar</button>
+    <div class="container">
+      <div class="articulos">
+        <% for (let i = 0; i < articles.length; i++ ){ %>
+          <div class="article-item">
+            <p><a href="/article/<%= identifiers[i] %>"> <%= articles[i].Title %> </a></p>
+            <h3> Por <%= articles[i].Author %> </h3>
+          </div>
+        <% } %>
+      </div>
+    </div>
+
     <div id="create-article">
       <a href="https://ubuntuperonista.blogspot.com/" target="_blank">+</a>
     </div>
+
     
 </body>
 </html>

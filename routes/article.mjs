@@ -1,12 +1,11 @@
 import express from 'express';
 const router = express();
 
-
 //Métodos para cada ruta de los artículos
 router
-  .route("/id=:id")
+  .route("/view/:id")
   .get((req, res) => {
-    res.send(`Estás viendo el artículo con ID ${id}`);
+    res.send(`Estás viendo el artículo con ID ${req.params.id}`);
   })
 
 router

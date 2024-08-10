@@ -1,3 +1,37 @@
+:root{
+  --fondo: grey;
+  --row-size: 400px;
+}
+
 body {
-  background-color: grey;
+  background-color: var(--fondo);
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.articulos{
+  display: grid;
+  grid-auto-rows: 100px;
+  grid-template-columns: 500px;
+  width: 500px;
+  height: 500px;
+  border: 3px solid white;
+}      
+
+.article-item{
+  background-color: red;
+  border: 1px solid black;
+  margin: 1px;
+}
+
+#btn-publish{
+  width: 60px;
+  height: 21px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10%;
 }

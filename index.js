@@ -8,8 +8,13 @@ const PORT = 3000;
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
-app.get("/", (req, res) => {
-  res.render("index");
+app.get("/", async (req, res) => {
+  const articles = await getArticles();
+  let identifiers = [];
+  for (let i = 0; i < articles.length; i++){
+    identifiers[i] = articles[i].ArticleId.toString();
+  }
+  res.render("inicio", { articles: articles, identifiers: identifiers });
 })
 
 app.use('/article', article);
@@ -20,5 +25,9 @@ app.get("/article/:id", async (req, res) => {
 
   res.send(article);
 })
+
+function loadArticles(articles){
+  
+}
 
 app.listen(PORT);
