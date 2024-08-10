@@ -28,10 +28,15 @@ body {
   margin: 1px;
 }
 
-#btn-publish{
-  width: 60px;
+#btn-create{
+  width: 45px;
   height: 21px;
   background-color: white;
   border: 1px solid black;
   border-radius: 10%;
+}
+
+#create-link{
+  text-decoration: none;
+  color: black;
 }
