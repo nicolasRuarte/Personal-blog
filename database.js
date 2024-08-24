@@ -16,17 +16,20 @@ export async function getArticles(){
 }
 
 export async function getArticle(id){
-  const [rows] = await pool.query(`
+  const [ rows ] = await pool.query(`
   SELECT *
   FROM Articles
   WHERE ArticleId = ?
-`, [id])
+`, [ id ])
   return rows[0];
 }
 
 export async function postArticle(author, title, textBody){
-  const [rows] = await pool.query(`
-  INSERT INTO Articles (author, title, id)
+  const [ result ] = await pool.query(`
+  INSERT INTO Articles (author, title, textBody)
   VALUES (?, ?, ?)
-`, [author], [title], [textBody]);
+`, [author, title, textBody]);
+  
+  const id = result.insertId;
+  return getArticle(id);
 }

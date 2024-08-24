@@ -1,5 +1,5 @@
 import express from 'express';
-import article from './routes/article.mjs'
+import article from './routes/article.mjs';
 import { getArticles, getArticle, postArticle } from './database.js';
 
 const app = express();
@@ -7,6 +7,7 @@ const PORT = 3000;
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use(express.urlencoded({extended: true}));
 
 app.get("/", async (req, res) => {
   const articles = await getArticles();
@@ -14,8 +15,8 @@ app.get("/", async (req, res) => {
   for (let i = 0; i < articles.length; i++){
     identifiers[i] = articles[i].ArticleId.toString();
   }
-  res.render("inicio", { articles: articles, identifiers: identifiers });
-})
+  res.status(200).render("inicio", { articles: articles, identifiers: identifiers });
+});
 
 app.use('/article', article);
 
@@ -26,8 +27,9 @@ app.get("/article/:id", async (req, res) => {
   res.send(article);
 })
 
-function loadArticles(articles){
+app.post('/article/create/post', (req, res) => {
   
-}
+  res.send("Post request");
+})
 
 app.listen(PORT);
