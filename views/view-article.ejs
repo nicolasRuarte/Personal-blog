@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    
+    <link rel="stylesheet" type="text/css" href="/view-article.css">
+</head>
+<body>
+    <header>
+      <h1 class="header-h1"><a href="/">Logo</a></h1>
+    </header>
+
+    <div class="container contenido">
+      <div class="container articulo">
+        <h1 class="articulo-texto"> <%= locals.title %> </h1>
+        <h2 class="articulo-texto">  <%= locals.author %> </h2>
+
+        <p class="articulo-texto"> <%= locals.textBody %> </p>
+
+          <div class="container acciones">
+            <button id="btn-editar"></button>
+            <button id="btn-borrar"></button>
+          </div>
+      </div>
+
+      <div class="container descubre">
+        <h2>Te puede interesar</h2>   
+      </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    
+    <link rel="stylesheet" type="text/css" href="/inicio.css">
+</head>
+<body>
+    <div class="container">
+      <h1>Bienvenido al blog</h1>
+      <input type="text" id="buscador">
+      <select name="combobox">
+        <option value="saludo"></option>
+      </select>
+      <button id="btn-buscar">Buscar</button>
+      <div id="btn-create"><a id="create-link" href="/article/create">Create</a></div>
+    </div>
+
+    <div class="container">
+      <div class="articulos">
+        <% for (let i = 0; i < articles.length; i++ ){ %>
+          <div class="article-item">
+            <p><a href="/article/<%= identifiers[i] %>"> <%= articles[i].Title %> </a></p>
+            <h3> Por <%= articles[i].Author %> </h3>
+          </div>
+        <% } %>
+      </div>
+    </div>
+
+    <div id="create-article">
+      <a href="https://ubuntuperonista.blogspot.com/" target="_blank">+</a>
+    </div>
+
+    
+</body>
+</html>

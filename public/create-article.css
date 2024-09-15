@@ -1,0 +1,9 @@
+body {
+  background-color: grey;
+}
+
+textarea { 
+  resize: none;
+  height: 20vh;
+  width: 40vw;
+}
