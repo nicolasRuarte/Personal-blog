@@ -1,15 +1,10 @@
 import express from 'express';
-import { postArticle } from '../database.js';
+import { postArticle, getArticle } from '../database.js';
 const router = express();
 
 router.use(express.urlencoded());
 
 //Métodos para cada ruta de los artículos
-router
-  .route("/view/:id")
-  .get((req, res) => {
-    res.send(`Estás viendo el artículo con ID ${req.params.id}`);
-  })
 
 router
   .route("/")
@@ -21,6 +16,12 @@ router
   .route("/create")
   .get((req, res) => {
     res.render("create-article");
+})
+
+router.get("article/:id", (req, res) => {
+  const id = req.params.id;
+
+  res.render("view-article", {id: id});
 })
 
 router.post("/create", async (req, res) => {

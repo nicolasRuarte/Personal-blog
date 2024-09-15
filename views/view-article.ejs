@@ -11,21 +11,24 @@
     <header>
       <h1 class="header-h1"><a href="/">Logo</a></h1>
     </header>
-  <div class="container articulo">
-    <h1 class="articulo-texto"> <%= locals.title %> </h1>
-    <h2 class="articulo-texto">  <%= locals.author %> </h2>
 
-    <p class="articulo-texto"> <%= locals.textBody %> </p>
+    <div class="container contenido">
+      <div class="container articulo">
+        <h1 class="articulo-texto"> <%= locals.title %> </h1>
+        <h2 class="articulo-texto">  <%= locals.author %> </h2>
 
-      <div class="container acciones">
-        <button id="btn-editar"></button>
-        <button id="btn-borrar"></button>
+        <p class="articulo-texto"> <%= locals.textBody %> </p>
+
+          <div class="container acciones">
+            <button id="btn-editar"></button>
+            <button id="btn-borrar"></button>
+          </div>
       </div>
-  </div>
 
-  <div class="container descubre">
-    
-  </div>
+      <div class="container descubre">
+        <h2>Te puede interesar</h2>   
+      </div>
+    </div>
 
 
 </body>

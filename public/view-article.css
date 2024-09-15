@@ -32,11 +32,16 @@ body {
   border-radius: 3%;
 }
 
+.contenido {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 .articulo {
   background-color: white;
   width: clamp(1vw, var(--article-width), var(--article-width));
-  display: block;
+  height: 50vh;
 }
 
 .articulo-texto {
@@ -48,8 +53,8 @@ body {
 }
 
 .descubre {
-  width: 10vw;
-  height: 10vh;
+  width: 25vw;
+  height: 25vh;
   background-color: yellow;
   display: block;
 }
@@ -66,6 +71,8 @@ h2 {
 .acciones {
   background-color: blue;
   width: 60vw;
+  display: flex;
+  justify-content: right;
 }
 
 #btn-editar {

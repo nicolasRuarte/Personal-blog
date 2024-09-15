@@ -8,28 +8,37 @@ const PORT = 3000;
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
+app.use('/article', article);
 
 app.get("/", async (req, res) => {
   const articles = await getArticles();
   let identifiers = [];
+
   for (let i = 0; i < articles.length; i++){
     identifiers[i] = articles[i].ArticleId.toString();
   }
+
   res.status(200).render("inicio", { articles: articles, identifiers: identifiers });
 });
 
-app.use('/article', article);
 
 app.get("/article/:id", async (req, res) => {
-  let id = req.params.id;
-  const article = await getArticle(id);
+  const id = req.params.id;
 
-  res.send(article);
+  const article = await getArticle(id);
+  console.log(article);
+  
+  res.status(200).render("view-article",
+    {
+      title: article.Title,
+      author: article.Author,
+      textBody: article.TextBody
+    })
 })
 
-app.post('/article/create/post', (req, res) => {
+app.post('/article/create', (req, res) => {
   
-  res.send("Post request");
+  res.status.send("Post request");
 })
 
 app.listen(PORT);
