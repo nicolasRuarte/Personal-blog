@@ -1,0 +1,90 @@
+:root {
+  --color-fondo: grey;
+  --button-size: 3vw;
+  --article-width: 70vw;
+}
+
+header {
+  background-color: green;
+  width: clamp(0px, 100vw, 100vw);
+  height: clamp(0px, 10vh, 10vh);
+  margin: 0vh 0vw 2vh 0vw;
+  padding: 0px;
+}
+
+.header-h1, a {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background: var(--color-fondo);
+  margin: 0px;
+  padding: 0px;
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+}
+
+.container {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 3%;
+}
+
+.contenido {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.articulo {
+  background-color: white;
+  width: clamp(1vw, var(--article-width), var(--article-width));
+  height: 50vh;
+}
+
+.articulo-texto {
+  display: block;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 2vh 1vw;
+  padding: 0px;
+  background-color: red;
+}
+
+.descubre {
+  width: 25vw;
+  height: 25vh;
+  background-color: yellow;
+  display: block;
+}
+
+p {
+  width: clamp(0px, 78vw, var(--article-width));
+}
+
+h2 {
+  font-weight: 100;
+}
+
+/*Div de los botones*/
+.acciones {
+  background-color: blue;
+  width: 60vw;
+  display: flex;
+  justify-content: right;
+}
+
+#btn-editar {
+  width: var(--button-size);
+  height: var(--button-size);
+  margin: 0px;
+}
+
+
+#btn-borrar {
+  width: var(--button-size);
+  height: var(--button-size);
+  margin: 0px;
+}
+

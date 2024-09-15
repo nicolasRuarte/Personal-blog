@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Crear usuario</title>
+
+  <link rel="stylesheet" type="text/css" href="/create-article.css"
+</head>
+<body>
+    <form id="create-article" autocomplete="off" action="/article/create" method="POST">
+      <label for="autor">Autor:</label>
+      <input type="text" id="autor" name="autor" value=" <%= locals.autor %>">
+      <br><br>
+    
+      <label for="titulo">Título:</label>
+      <input type="text" id="titulo" name="titulo" value="<%= locals.titulo %>">
+      <br><br>
+      
+      <label for="cuerpo">Cuerpo:</label>
+      <textarea rows="30" cols="60" name="cuerpo" value=" <%= locals.cuerpo %>"></textarea>
+      <br><br>
+
+    <input type="submit">
+  </form>
+
+  
+</body>
