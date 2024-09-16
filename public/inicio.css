@@ -28,6 +28,10 @@ body {
   margin: 1px;
 }
 
+#buscador {
+  width: 38vw;
+}
+
 #btn-create{
   width: 45px;
   height: 21px;

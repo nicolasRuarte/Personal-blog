@@ -28,10 +28,11 @@ router.post("/create", async (req, res) => {
   let author = req.body.autor.trim();
   let title = req.body.titulo.trim();
   let textBody = req.body.cuerpo.trim();
+  let tags = req.body.tags.trimStart();
 
-  const article = await postArticle(author, title, textBody);
+  const article = await postArticle(author, title, textBody, tags);
   
-  res.redirect("https://localhost:3000");
+  res.redirect("/");
 })
 
 export default router

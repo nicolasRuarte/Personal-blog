@@ -10,6 +10,16 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: true}));
 app.use('/article', article);
 
+function addHashtags (tags){
+  let hashtags = tags.split(" ");
+
+  for (let i = 0; i < hashtags.length; i++){
+    hashtags[i] = "#" + hashtags[i];
+  }
+
+  return hashtags.join(" ");
+}
+
 app.get("/", async (req, res) => {
   const articles = await getArticles();
   let identifiers = [];
@@ -31,6 +41,7 @@ app.get("/article/:id", async (req, res) => {
   res.status(200).render("view-article",
     {
       title: article.Title,
+      tags: addHashtags(article.Tags),
       author: article.Author,
       textBody: article.TextBody
     })
@@ -38,7 +49,7 @@ app.get("/article/:id", async (req, res) => {
 
 app.post('/article/create', (req, res) => {
   
-  res.status.send("Post request");
+  res.status(200).send("Post request");
 })
 
 app.listen(PORT);

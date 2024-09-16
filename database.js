@@ -24,11 +24,11 @@ export async function getArticle(id){
   return rows[0];
 }
 
-export async function postArticle(author, title, textBody){
+export async function postArticle(author, title, textBody, tags){
   const [ result ] = await pool.query(`
-  INSERT INTO Articles (author, title, textBody)
-  VALUES (?, ?, ?)
-`, [author, title, textBody]);
+  INSERT INTO Articles (author, title, textBody, tags)
+  VALUES (?, ?, ?, ?)
+`, [author, title, textBody, tags]);
   
   const id = result.insertId;
   return getArticle(id);

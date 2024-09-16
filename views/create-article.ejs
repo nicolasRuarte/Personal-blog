@@ -17,12 +17,16 @@
       <label for="titulo">Título:</label>
       <input type="text" id="titulo" name="titulo" value="<%= locals.titulo %>">
       <br><br>
+
+      <label for="tags">Tags: (separados por espacios)</label>
+      <input type="text" id="tags" name="tags" value=" <%= locals.tags %>">
+      <br><br>
       
       <label for="cuerpo">Cuerpo:</label>
       <textarea rows="30" cols="60" name="cuerpo" value=" <%= locals.cuerpo %>"></textarea>
       <br><br>
 
-    <input type="submit">
+    <input type="submit" value="Subir">
   </form>
 
   
